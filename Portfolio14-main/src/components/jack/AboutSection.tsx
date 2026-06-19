@@ -56,7 +56,7 @@ export function AboutSection() {
 
       <div className="relative z-10 flex flex-col items-center gap-16 sm:gap-20 md:gap-24">
         <AnimatedText
-          text="I am an AI/ML Engineer at Briskcovey Technologies and a B.Tech Computer Science Engineering graduate (AI & Data Science) from Poornima University, Jaipur. I build predictive models, deep learning pipelines, and cloud-deployed AI APIs, with hands-on experience across full-stack development, NLP, and production-grade ML systems."
+          text="I am an AI/ML Engineer at Briskcovey Technologies Pursuing B.Tech Computer Science Engineering  (AI & Data Science) from Poornima University, Jaipur. I build predictive models, deep learning pipelines, and cloud-deployed AI APIs, with hands-on experience across full-stack development, NLP, and production-grade ML systems."
           className="text-[#D7E2EA] font-medium text-center leading-relaxed max-w-[560px]"
           style={{ fontSize: "clamp(1rem, 2vw, 1.35rem)" }}
         />
