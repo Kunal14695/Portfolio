@@ -30,15 +30,15 @@ const SERVICES = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 bg-[#0C0C0C]">
+    <section id="services" className="px-4 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 bg-[#0C0C0C]">
       <div
         className="
           max-w-7xl mx-auto
           rounded-[40px] sm:rounded-[50px] md:rounded-[60px]
           border border-white/10
           bg-[#0C0C0C]
-          px-6 sm:px-8 md:px-12
-          py-12 sm:py-16 md:py-20
+          px-4 sm:px-8 md:px-12
+          py-8 sm:py-16 md:py-20
           shadow-[0_0_60px_rgba(255,255,255,0.03)]
         "
       >

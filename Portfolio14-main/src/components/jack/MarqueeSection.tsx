@@ -37,8 +37,7 @@ function Row({ images, direction }: { images: string[]; direction: "left" | "rig
           src={src}
           alt=""
           loading="lazy"
-          className="rounded-2xl object-cover shrink-0"
-          style={{ width: 420, height: 270 }}
+          className="rounded-2xl object-cover shrink-0 w-[260px] h-[160px] sm:w-[420px] sm:h-[270px]"
         />
       ))}
     </div>

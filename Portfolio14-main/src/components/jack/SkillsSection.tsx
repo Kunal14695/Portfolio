@@ -79,7 +79,7 @@ function SkillRow({
         repeat: Infinity,
         ease: "linear",
       }}
-      className="flex gap-6 whitespace-nowrap"
+      className="flex gap-4 sm:gap-6 whitespace-nowrap"
     >
       {[...skills, ...skills].map((skill, index) => {
         const Icon = skill.Icon;
@@ -88,8 +88,8 @@ function SkillRow({
           <div
             key={index}
             className="
-              flex items-center gap-4
-              px-7 py-4
+              flex items-center gap-2.5 sm:gap-4
+              px-4 py-2.5 sm:px-7 sm:py-4
               rounded-full
               border border-white/10
               bg-white/[0.03]
@@ -99,9 +99,9 @@ function SkillRow({
               shrink-0
             "
           >
-            <Icon size={36} color={skill.color} />
+            <Icon className="w-[24px] h-[24px] sm:w-[36px] sm:h-[36px]" color={skill.color} />
 
-            <span className="text-white font-medium text-lg">
+            <span className="text-white font-medium text-sm sm:text-lg">
               {skill.name}
             </span>
           </div>

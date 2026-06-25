@@ -164,3 +164,16 @@ html {
   color: transparent;
 }
 
+:root {
+  --card-top-offset: 96px;
+  --card-gap: 28px;
+}
+
+@media (max-w: 768px) {
+  :root {
+    --card-top-offset: 70px;
+    --card-gap: 16px;
+  }
+}
+
+

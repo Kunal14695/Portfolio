@@ -1,6 +1,7 @@
 import { j as jsxRuntimeExports, r as reactExports } from "../_libs/react.mjs";
 import { F as FaPython, S as SiC, a as FaDatabase, b as SiTensorflow, c as SiKeras, d as SiPytorch, e as SiHuggingface, f as SiGooglegemini, g as SiDocker, h as SiGithubactions, i as SiFastapi, j as SiSqlalchemy, k as SiPostgresql, l as SiMongodb, m as SiJsonwebtokens, n as SiRender, o as SiGooglecloud, p as FaAws, q as FaGitAlt, r as FaGithub, s as FaHtml5, t as FaCss3Alt, u as SiBootstrap, v as FaEnvelope, w as FaLinkedin, x as FaInstagram } from "../_libs/react-icons.mjs";
-import { u as useScroll, m as motion, a as useTransform } from "../_libs/framer-motion.mjs";
+import { M as Menu, X } from "../_libs/lucide-react.mjs";
+import { A as AnimatePresence, m as motion, u as useScroll, a as useTransform } from "../_libs/framer-motion.mjs";
 import "../_libs/motion-dom.mjs";
 import "../_libs/motion-utils.mjs";
 function FadeIn({
@@ -106,41 +107,111 @@ const NAV_LINKS = [
   "Contact"
 ];
 function HeroSection() {
+  const [menuOpen, setMenuOpen] = reactExports.useState(false);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "section",
     {
       className: "h-screen flex flex-col relative",
       style: { overflowX: "clip" },
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
           FadeIn,
           {
             as: "nav",
             delay: 0,
             y: -20,
-            className: "flex items-center justify-between px-6 md:px-10 pt-6 md:pt-8 relative z-20",
-            children: NAV_LINKS.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "a",
-              {
-                href: `#${link.toLowerCase()}`,
-                className: "\n              text-[#D7E2EA]\n              font-medium\n              uppercase\n              tracking-wider\n              text-sm\n              md:text-lg\n              lg:text-[1.4rem]\n              hover:opacity-70\n              transition-opacity duration-200\n            ",
-                children: link
-              },
-              link
-            ))
+            className: "flex items-center justify-between px-6 md:px-10 pt-6 md:pt-8 relative z-20 w-full",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "a",
+                {
+                  href: "#",
+                  className: "\n            text-[#D7E2EA]\n            font-bold\n            tracking-wider\n            text-lg\n            md:text-xl\n            uppercase\n            hover:opacity-80\n            transition-opacity\n          ",
+                  children: "KST"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "hidden md:flex items-center gap-6 lg:gap-10", children: NAV_LINKS.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "a",
+                {
+                  href: `#${link.toLowerCase()}`,
+                  className: "\n                text-[#D7E2EA]\n                font-medium\n                uppercase\n                tracking-wider\n                text-sm\n                md:text-lg\n                lg:text-[1.4rem]\n                hover:opacity-70\n                transition-opacity duration-200\n              ",
+                  children: link
+                },
+                link
+              )) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  onClick: () => setMenuOpen(true),
+                  className: "md:hidden text-[#D7E2EA] hover:opacity-70 transition-opacity p-2 focus:outline-none cursor-pointer",
+                  "aria-label": "Open Menu",
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(Menu, { className: "h-6 w-6" })
+                }
+              )
+            ]
           }
         ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-hidden mt-6 sm:mt-4 md:-mt-5 px-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(FadeIn, { delay: 0.15, y: 40, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: menuOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.div,
+            {
+              initial: { opacity: 0 },
+              animate: { opacity: 1 },
+              exit: { opacity: 0 },
+              onClick: () => setMenuOpen(false),
+              className: "fixed inset-0 bg-black/70 backdrop-blur-md z-40 md:hidden"
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            motion.div,
+            {
+              initial: { x: "100%" },
+              animate: { x: 0 },
+              exit: { x: "100%" },
+              transition: { type: "spring", damping: 25, stiffness: 200 },
+              className: "fixed right-0 top-0 bottom-0 w-3/4 max-w-[280px] bg-[#0C0C0C]/95 border-l border-white/10 backdrop-blur-xl p-8 z-50 md:hidden flex flex-col",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-end mb-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    onClick: () => setMenuOpen(false),
+                    className: "text-[#D7E2EA] hover:opacity-70 transition-opacity p-2 focus:outline-none cursor-pointer",
+                    "aria-label": "Close Menu",
+                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-6 w-6" })
+                  }
+                ) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col gap-6 mt-8", children: NAV_LINKS.map((link, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  motion.a,
+                  {
+                    initial: { opacity: 0, x: 20 },
+                    animate: { opacity: 1, x: 0 },
+                    transition: { delay: i * 0.05 },
+                    href: `#${link.toLowerCase()}`,
+                    onClick: () => setMenuOpen(false),
+                    className: "\n                      text-[#D7E2EA]\n                      font-semibold\n                      uppercase\n                      tracking-widest\n                      text-lg\n                      hover:text-white\n                      transition-colors duration-200\n                      pb-2\n                      border-b border-white/5\n                    ",
+                    children: link
+                  },
+                  link
+                )) })
+              ]
+            }
+          )
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-hidden mt-6 sm:mt-4 md:-mt-5 px-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(FadeIn, { delay: 0.15, y: 40, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "h1",
           {
-            className: "\n              hero-heading\n              font-black\n              uppercase\n              tracking-tight\n              leading-none\n              whitespace-nowrap\n              w-full\n              text-[12.5vw]\n              sm:text-[13.5vw]\n              md:text-[14.5vw]\n              lg:text-[15.5vw]\n            ",
-            children: "Hi, i'm kunal"
+            className: "\n              hero-heading\n              font-black\n              uppercase\n              tracking-tight\n              leading-[0.95]\n              w-full\n              text-[15vw]\n              sm:text-[13.5vw]\n              md:text-[14.5vw]\n              lg:text-[15.5vw]\n              break-words\n              sm:whitespace-nowrap\n            ",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block sm:inline", children: "Hi, i'm" }),
+              " ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block sm:inline", children: "kunal" })
+            ]
           }
         ) }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "div",
           {
-            className: "\n          mt-auto\n          flex\n          justify-between\n          items-end\n          pb-7\n          sm:pb-8\n          md:pb-10\n          px-6\n          md:px-10\n          relative\n          z-20\n        ",
+            className: "\n          mt-auto\n          flex\n          flex-col sm:flex-row\n          justify-between\n          items-start sm:items-end\n          gap-6 sm:gap-0\n          pb-7\n          sm:pb-8\n          md:pb-10\n          px-6\n          md:px-10\n          relative\n          z-20\n        ",
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(FadeIn, { delay: 0.35, y: 20, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "p",
@@ -161,7 +232,7 @@ function HeroSection() {
           {
             delay: 0.6,
             y: 30,
-            className: "\n          absolute\n          left-1/2\n          -translate-x-1/2\n          z-10\n          top-1/2\n          -translate-y-1/2\n          sm:top-auto\n          sm:translate-y-0\n          sm:bottom-0\n          w-[280px]\n          sm:w-[360px]\n          md:w-[440px]\n          lg:w-[520px]\n        ",
+            className: "\n          absolute\n          left-1/2\n          -translate-x-1/2\n          z-10\n          top-1/2\n          -translate-y-1/2\n          sm:top-auto\n          sm:translate-y-0\n          sm:bottom-0\n          w-[220px]\n          sm:w-[360px]\n          md:w-[440px]\n          lg:w-[520px]\n        ",
             children: /* @__PURE__ */ jsxRuntimeExports.jsx(
               Magnet,
               {
@@ -219,8 +290,7 @@ function Row({ images, direction }) {
       src,
       alt: "",
       loading: "lazy",
-      className: "rounded-2xl object-cover shrink-0",
-      style: { width: 420, height: 270 }
+      className: "rounded-2xl object-cover shrink-0 w-[260px] h-[160px] sm:w-[420px] sm:h-[270px]"
     },
     i
   )) });
@@ -294,7 +364,7 @@ function AboutSection() {
             x: -80,
             y: 0,
             duration: 0.9,
-            className: "absolute top-[4%] left-[1%] sm:left-[2%] md:left-[4%] w-[120px] sm:w-[160px] md:w-[210px]",
+            className: "absolute top-[4%] left-[1%] sm:left-[2%] md:left-[4%] w-[50px] sm:w-[120px] md:w-[210px]",
             children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/moon_icon.11395d36.png", alt: "", className: "w-full h-auto" })
           }
         ),
@@ -305,7 +375,7 @@ function AboutSection() {
             x: -80,
             y: 0,
             duration: 0.9,
-            className: "absolute bottom-[8%] left-[3%] sm:left-[6%] md:left-[10%] w-[100px] sm:w-[140px] md:w-[180px]",
+            className: "absolute bottom-[8%] left-[3%] sm:left-[6%] md:left-[10%] w-[40px] sm:w-[100px] md:w-[180px]",
             children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/p59_1.4659672e.png", alt: "", className: "w-full h-auto" })
           }
         ),
@@ -316,7 +386,7 @@ function AboutSection() {
             x: 80,
             y: 0,
             duration: 0.9,
-            className: "absolute top-[4%] right-[1%] sm:right-[2%] md:right-[4%] w-[120px] sm:w-[160px] md:w-[210px]",
+            className: "absolute top-[4%] right-[1%] sm:right-[2%] md:right-[4%] w-[55px] sm:w-[120px] md:w-[210px]",
             children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/lego_icon-1.703bb594.png", alt: "", className: "w-full h-auto" })
           }
         ),
@@ -327,7 +397,7 @@ function AboutSection() {
             x: 80,
             y: 0,
             duration: 0.9,
-            className: "absolute bottom-[8%] right-[3%] sm:right-[6%] md:right-[10%] w-[130px] sm:w-[170px] md:w-[220px]",
+            className: "absolute bottom-[8%] right-[3%] sm:right-[6%] md:right-[10%] w-[55px] sm:w-[130px] md:w-[220px]",
             children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/Group_134-1.2e04f3ce.png", alt: "", className: "w-full h-auto" })
           }
         ),
@@ -343,7 +413,7 @@ function AboutSection() {
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             AnimatedText,
             {
-              text: "I am an AI/ML Engineer at Briskcovey Technologies and a B.Tech Computer Science Engineering graduate (AI & Data Science) from Poornima University, Jaipur. I build predictive models, deep learning pipelines, and cloud-deployed AI APIs, with hands-on experience across full-stack development, NLP, and production-grade ML systems.",
+              text: "I am an AI/ML Engineer at Briskcovey Technologies Pursuing B.Tech Computer Science Engineering  (AI & Data Science) from Poornima University, Jaipur. I build predictive models, deep learning pipelines, and cloud-deployed AI APIs, with hands-on experience across full-stack development, NLP, and production-grade ML systems.",
               className: "text-[#D7E2EA] font-medium text-center leading-relaxed max-w-[560px]",
               style: { fontSize: "clamp(1rem, 2vw, 1.35rem)" }
             }
@@ -382,10 +452,10 @@ const SERVICES = [
   }
 ];
 function ServicesSection() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "services", className: "px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 bg-[#0C0C0C]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "services", className: "px-4 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 bg-[#0C0C0C]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "div",
     {
-      className: "\n          max-w-7xl mx-auto\n          rounded-[40px] sm:rounded-[50px] md:rounded-[60px]\n          border border-white/10\n          bg-[#0C0C0C]\n          px-6 sm:px-8 md:px-12\n          py-12 sm:py-16 md:py-20\n          shadow-[0_0_60px_rgba(255,255,255,0.03)]\n        ",
+      className: "\n          max-w-7xl mx-auto\n          rounded-[40px] sm:rounded-[50px] md:rounded-[60px]\n          border border-white/10\n          bg-[#0C0C0C]\n          px-4 sm:px-8 md:px-12\n          py-8 sm:py-16 md:py-20\n          shadow-[0_0_60px_rgba(255,255,255,0.03)]\n        ",
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(FadeIn, { y: 40, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
           "h2",
@@ -558,7 +628,7 @@ function ExperienceSection() {
                       className: "\n                        font-medium\n                        uppercase\n                        transition-all duration-300\n                        group-hover:translate-x-2\n                      ",
                       style: {
                         color: "#FFFFFF",
-                        fontSize: "clamp(1rem, 2.2vw, 2.1rem)",
+                        fontSize: "clamp(1.25rem, 5vw, 2.1rem)",
                         lineHeight: 1.1
                       },
                       children: exp.role
@@ -679,8 +749,8 @@ function ProjectCard({
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "div",
     {
-      className: "sticky top-24 md:top-32",
-      style: { top: `${index * 28 + 96}px` },
+      className: "sticky",
+      style: { top: `calc(var(--card-top-offset) + ${index} * var(--card-gap))` },
       children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
         motion.div,
         {
@@ -717,7 +787,7 @@ function ProjectCard({
               /* @__PURE__ */ jsxRuntimeExports.jsx(LiveProjectButton, { href: project.link })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-5 gap-4", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-2 flex flex-col gap-4", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hidden md:flex md:col-span-2 flex-col gap-4", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "img",
                   {
@@ -743,16 +813,13 @@ function ProjectCard({
                   }
                 )
               ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "md:col-span-3 h-48 sm:h-64 md:h-auto", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "img",
                 {
                   src: project.image,
                   alt: project.name,
                   loading: "lazy",
-                  className: "\n                w-full h-full object-cover\n                rounded-[35px] md:rounded-[45px]\n                border border-white/10\n                hover:scale-[1.01]\n                transition-all duration-300\n              ",
-                  style: {
-                    minHeight: "100%"
-                  }
+                  className: "\n                w-full h-full object-cover\n                rounded-[25px] sm:rounded-[35px] md:rounded-[45px]\n                border border-white/10\n                hover:scale-[1.01]\n                transition-all duration-300\n              "
                 }
               ) })
             ] })
@@ -795,7 +862,7 @@ function ProjectsSection() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-7xl mx-auto", children: PROJECTS.map((project, index) => /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
-            className: "h-[85vh]",
+            className: "h-[60vh] sm:h-[85vh]",
             children: /* @__PURE__ */ jsxRuntimeExports.jsx(
               ProjectCard,
               {
@@ -856,16 +923,16 @@ function SkillRow({
         repeat: Infinity,
         ease: "linear"
       },
-      className: "flex gap-6 whitespace-nowrap",
+      className: "flex gap-4 sm:gap-6 whitespace-nowrap",
       children: [...skills, ...skills].map((skill, index) => {
         const Icon = skill.Icon;
         return /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "div",
           {
-            className: "\n              flex items-center gap-4\n              px-7 py-4\n              rounded-full\n              border border-white/10\n              bg-white/[0.03]\n              backdrop-blur-md\n              hover:bg-white/[0.06]\n              transition-all duration-300\n              shrink-0\n            ",
+            className: "\n              flex items-center gap-2.5 sm:gap-4\n              px-4 py-2.5 sm:px-7 sm:py-4\n              rounded-full\n              border border-white/10\n              bg-white/[0.03]\n              backdrop-blur-md\n              hover:bg-white/[0.06]\n              transition-all duration-300\n              shrink-0\n            ",
             children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Icon, { size: 36, color: skill.color }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white font-medium text-lg", children: skill.name })
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Icon, { className: "w-[24px] h-[24px] sm:w-[36px] sm:h-[36px]", color: skill.color }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white font-medium text-sm sm:text-lg", children: skill.name })
             ]
           },
           index

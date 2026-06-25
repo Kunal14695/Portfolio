@@ -63,8 +63,8 @@ function ProjectCard({
 
   return (
     <div
-      className="sticky top-24 md:top-32"
-      style={{ top: `${index * 28 + 96}px` }}
+      className="sticky"
+      style={{ top: `calc(var(--card-top-offset) + ${index} * var(--card-gap))` }}
     >
       <motion.div
         style={{ scale }}
@@ -114,7 +114,7 @@ function ProjectCard({
         {/* Images */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
           {/* Left */}
-          <div className="md:col-span-2 flex flex-col gap-4">
+          <div className="hidden md:flex md:col-span-2 flex-col gap-4">
             <img
               src={project.image}
               alt={project.name}
@@ -149,21 +149,18 @@ function ProjectCard({
           </div>
 
           {/* Main Image */}
-          <div className="md:col-span-3">
+          <div className="md:col-span-3 h-48 sm:h-64 md:h-auto">
             <img
               src={project.image}
               alt={project.name}
               loading="lazy"
               className="
                 w-full h-full object-cover
-                rounded-[35px] md:rounded-[45px]
+                rounded-[25px] sm:rounded-[35px] md:rounded-[45px]
                 border border-white/10
                 hover:scale-[1.01]
                 transition-all duration-300
               "
-              style={{
-                minHeight: "100%",
-              }}
             />
           </div>
         </div>
@@ -214,7 +211,7 @@ export function ProjectsSection() {
         {PROJECTS.map((project, index) => (
           <div
             key={project.n}
-            className="h-[85vh]"
+            className="h-[60vh] sm:h-[85vh]"
           >
             <ProjectCard
               project={project}

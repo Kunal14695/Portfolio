@@ -35,26 +35,33 @@ const headers = ((m) => function headersRouteRule(event) {
   }
 });
 const assets = {
-  "/assets/index-n7EmHfJE.js": {
+  "/assets/index-BrB45BAX.js": {
     "type": "text/javascript; charset=utf-8",
-    "etag": '"2e7bc-T0CwtJ5RqKGgGSM1GAdyL4C0664"',
-    "mtime": "2026-06-19T05:57:56.846Z",
-    "size": 190396,
-    "path": "../public/assets/index-n7EmHfJE.js"
+    "etag": '"3058e-5P6capVzpzdxQSugOPzxBvAOcy0"',
+    "mtime": "2026-06-25T09:26:25.698Z",
+    "size": 198030,
+    "path": "../public/assets/index-BrB45BAX.js"
   },
-  "/assets/styles-DadKNCe9.css": {
-    "type": "text/css; charset=utf-8",
-    "etag": '"14c93-QXF30mX9pCAAz9AvBhPYFxJzKJw"',
-    "mtime": "2026-06-19T05:57:56.846Z",
-    "size": 85139,
-    "path": "../public/assets/styles-DadKNCe9.css"
-  },
-  "/assets/index-mCuiVMcZ.js": {
+  "/assets/index-7aX2BPrG.js": {
     "type": "text/javascript; charset=utf-8",
-    "etag": '"554b0-KfU632iZQC8o1BTBEpMF0G4v/vA"',
-    "mtime": "2026-06-19T05:57:56.846Z",
+    "etag": '"554b0-7LIfIwvRv9eIVmI3NKmXn1zRQJk"',
+    "mtime": "2026-06-25T09:26:25.699Z",
     "size": 349360,
-    "path": "../public/assets/index-mCuiVMcZ.js"
+    "path": "../public/assets/index-7aX2BPrG.js"
+  },
+  "/assets/styles-CtV_3meq.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": '"152bc-Px+aleuumKYnecuP3nMHG1GSsnI"',
+    "mtime": "2026-06-25T09:26:25.698Z",
+    "size": 86716,
+    "path": "../public/assets/styles-CtV_3meq.css"
+  },
+  "/assets/amine-CiwTsmF2.png": {
+    "type": "image/png",
+    "etag": '"177d99-4qZEyQltUPkM5GkTvdWrZSjC0VA"',
+    "mtime": "2026-06-25T09:26:25.700Z",
+    "size": 1539481,
+    "path": "../public/assets/amine-CiwTsmF2.png"
   },
   "/image.png": {
     "type": "image/png",
@@ -62,13 +69,6 @@ const assets = {
     "mtime": "2026-06-19T05:22:10.184Z",
     "size": 1539481,
     "path": "../public/image.png"
-  },
-  "/assets/amine-CiwTsmF2.png": {
-    "type": "image/png",
-    "etag": '"177d99-4qZEyQltUPkM5GkTvdWrZSjC0VA"',
-    "mtime": "2026-06-19T05:57:56.846Z",
-    "size": 1539481,
-    "path": "../public/assets/amine-CiwTsmF2.png"
   }
 };
 function readAsset(id) {

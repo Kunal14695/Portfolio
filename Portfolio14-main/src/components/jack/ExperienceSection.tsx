@@ -147,7 +147,7 @@ export function ExperienceSection() {
                       "
                       style={{
                         color: "#FFFFFF",
-                        fontSize: "clamp(1rem, 2.2vw, 2.1rem)",
+                        fontSize: "clamp(1.25rem, 5vw, 2.1rem)",
                         lineHeight: 1.1,
                       }}
                     >
