@@ -6,7 +6,7 @@ A modern, high-performance portfolio website built with **React**, **TanStack Ro
 
 ## 🌐 Live Preview
 
-- **Local URL**: https://portfolio-nh96.onrender.com/
+- **Live URL**: https://portfolio-nh96.onrender.com/
 - **Production Server**: Node.js / Nitro SSR
 - **Live Deployment Options**: GitHub Pages, Vercel, Netlify, Render
 
