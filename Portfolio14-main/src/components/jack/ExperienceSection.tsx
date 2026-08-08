@@ -3,9 +3,9 @@ import { FadeIn } from "./FadeIn";
 const EXPERIENCE = [
   {
     n: "01",
-    role: "AI/ML Engineer",
+    role: "AI/ML Engineer Intern",
     org: "Briskcovey Technologies",
-    period: "05/2026 – Current",
+    period: "05/2026 – 08/2026",
     points: [
       "Built RoadBuddy, an AI-powered road trip planner, integrating ML-driven recommendations with a full-stack architecture covering frontend, backend, and deployment.",
       "Gained hands-on experience across the full ML lifecycle — data preprocessing, model training, API development, and cloud deployment — while working independently on end-to-end production projects.",
@@ -19,7 +19,7 @@ const EXPERIENCE = [
     n: "02",
     role: "Machine Learning Developer Intern",
     org: "Cognetix Global Technology",
-    period: "05/2026 – Current (Remote)",
+    period: "05/2026 – 08/2026 (Remote)",
     points: [
       "Utilized deep learning frameworks TensorFlow and Keras to build CNN and RNN applications, enabling advanced predictive analytics across multiple business domains.",
       "Implemented optimized algorithms for data processing and feature extraction, significantly streamlining model training workflows and reducing compute time.",
@@ -60,13 +60,14 @@ const CERTIFICATIONS = [
   "Introduction to Generative AI and Studio – Simpli Learn",
   "Internship Certificate – The Nine Hertz (Python Devloper)",
   "Internship Certificate – Cognetix Global Technology (ML Developer)",
+  "Internship Certificate - Briskcovey Technologies (AI/ML Engineer)",
 ];
 
 export function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 bg-[#0C0C0C]"
+      className="px-4 sm:px-8 md:px-10 py-16 sm:py-24 md:py-32 bg-[#0C0C0C]"
     >
       <div className="max-w-7xl mx-auto">
         {/* Title */}
@@ -79,11 +80,11 @@ export function ExperienceSection() {
               leading-none
               tracking-tight
               text-center
-              mb-16 sm:mb-20 md:mb-28
+              mb-12 sm:mb-20 md:mb-28
               text-white
             "
             style={{
-              fontSize: "clamp(3rem, 12vw, 160px)",
+              fontSize: "clamp(2.6rem, 11vw, 160px)",
             }}
           >
             Experience
@@ -98,10 +99,10 @@ export function ExperienceSection() {
                 className="
                   group
                   flex flex-col md:flex-row
-                  gap-6 sm:gap-10 md:gap-14
-                  py-8 sm:py-10 md:py-12
-                  px-4 md:px-6
-                  rounded-3xl
+                  gap-4 sm:gap-8 md:gap-14
+                  py-6 sm:py-10 md:py-12
+                  px-3 sm:px-4 md:px-6
+                  rounded-2xl sm:rounded-3xl
                   border border-transparent
                   transition-all duration-300
                   hover:bg-white/5
@@ -128,7 +129,7 @@ export function ExperienceSection() {
                   style={{
                     color: "#FFFFFF",
                     opacity: 0.15,
-                    fontSize: "clamp(3rem, 10vw, 140px)",
+                    fontSize: "clamp(2.2rem, 8vw, 140px)",
                     lineHeight: 1,
                   }}
                 >
@@ -136,7 +137,7 @@ export function ExperienceSection() {
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col gap-3 sm:gap-4">
+                <div className="flex flex-col gap-2.5 sm:gap-4">
                   <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-3 gap-1">
                     <span
                       className="
@@ -147,8 +148,8 @@ export function ExperienceSection() {
                       "
                       style={{
                         color: "#FFFFFF",
-                        fontSize: "clamp(1.25rem, 5vw, 2.1rem)",
-                        lineHeight: 1.1,
+                        fontSize: "clamp(1.1rem, 4.2vw, 2.1rem)",
+                        lineHeight: 1.15,
                       }}
                     >
                       {exp.role}
@@ -166,14 +167,14 @@ export function ExperienceSection() {
                     {exp.points.map((p, idx) => (
                       <li
                         key={idx}
-                        className="font-light leading-relaxed max-w-2xl flex gap-3"
+                        className="font-light leading-relaxed max-w-2xl flex gap-2.5 sm:gap-3"
                         style={{
                           color: "#FFFFFF",
                           opacity: 0.65,
-                          fontSize: "clamp(0.85rem, 1.6vw, 1.15rem)",
+                          fontSize: "clamp(0.8rem, 1.5vw, 1.15rem)",
                         }}
                       >
-                        <span className="text-white/30">—</span>
+                        <span className="text-white/30 shrink-0">—</span>
                         <span>{p}</span>
                       </li>
                     ))}
@@ -185,26 +186,26 @@ export function ExperienceSection() {
         </div>
 
         {/* Education + Certifications */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 mt-20 sm:mt-24 md:mt-28">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 mt-16 sm:mt-24 md:mt-28">
           {/* Education */}
           <FadeIn y={30} delay={0.1}>
             <div>
-              <h3 className="text-white/50 uppercase tracking-[0.25em] text-sm mb-6">
+              <h3 className="text-white/50 uppercase tracking-[0.25em] text-xs sm:text-sm mb-4 sm:mb-6">
                 Education
               </h3>
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-5 sm:gap-6">
                 {EDUCATION.map((ed) => (
                   <div
                     key={ed.degree}
-                    className="border-l border-white/10 pl-5"
+                    className="border-l border-white/10 pl-4 sm:pl-5"
                   >
-                    <p className="text-white font-medium leading-snug">
+                    <p className="text-white font-medium leading-snug text-sm sm:text-base">
                       {ed.degree}
                     </p>
-                    <p className="text-white/50 text-sm mt-1">
+                    <p className="text-white/50 text-xs sm:text-sm mt-1">
                       {ed.school}
                     </p>
-                    <p className="text-white/30 text-xs mt-1 uppercase tracking-[0.15em]">
+                    <p className="text-white/30 text-[11px] sm:text-xs mt-1 uppercase tracking-[0.15em]">
                       {ed.period} · {ed.detail}
                     </p>
                   </div>
@@ -216,16 +217,16 @@ export function ExperienceSection() {
           {/* Certifications */}
           <FadeIn y={30} delay={0.2}>
             <div>
-              <h3 className="text-white/50 uppercase tracking-[0.25em] text-sm mb-6">
+              <h3 className="text-white/50 uppercase tracking-[0.25em] text-xs sm:text-sm mb-4 sm:mb-6">
                 Certifications
               </h3>
-              <ul className="flex flex-col gap-3">
+              <ul className="flex flex-col gap-2.5 sm:gap-3">
                 {CERTIFICATIONS.map((cert) => (
                   <li
                     key={cert}
-                    className="text-white/65 text-sm sm:text-base leading-relaxed flex gap-3"
+                    className="text-white/65 text-xs sm:text-sm md:text-base leading-relaxed flex gap-2.5 sm:gap-3"
                   >
-                    <span className="text-white/30">—</span>
+                    <span className="text-white/30 shrink-0">—</span>
                     <span>{cert}</span>
                   </li>
                 ))}

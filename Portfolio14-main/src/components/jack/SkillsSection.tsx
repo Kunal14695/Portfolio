@@ -75,21 +75,21 @@ function SkillRow({
         x: reverse ? ["-50%", "0%"] : ["0%", "-50%"],
       }}
       transition={{
-        duration: 30,
+        duration: 32,
         repeat: Infinity,
         ease: "linear",
       }}
-      className="flex gap-4 sm:gap-6 whitespace-nowrap"
+      className="flex gap-3 sm:gap-6 whitespace-nowrap will-change-transform"
     >
-      {[...skills, ...skills].map((skill, index) => {
+      {[...skills, ...skills, ...skills].map((skill, index) => {
         const Icon = skill.Icon;
 
         return (
           <div
             key={index}
             className="
-              flex items-center gap-2.5 sm:gap-4
-              px-4 py-2.5 sm:px-7 sm:py-4
+              flex items-center gap-2 sm:gap-3.5
+              px-3.5 py-2 sm:px-6 sm:py-3.5
               rounded-full
               border border-white/10
               bg-white/[0.03]
@@ -99,9 +99,9 @@ function SkillRow({
               shrink-0
             "
           >
-            <Icon className="w-[24px] h-[24px] sm:w-[36px] sm:h-[36px]" color={skill.color} />
+            <Icon className="w-[18px] h-[18px] sm:w-[30px] sm:h-[30px]" color={skill.color} />
 
-            <span className="text-white font-medium text-sm sm:text-lg">
+            <span className="text-white font-medium text-xs sm:text-base">
               {skill.name}
             </span>
           </div>
@@ -113,8 +113,9 @@ function SkillRow({
 
 export function SkillsSection() {
   return (
-    <section id="skills"
-      className="py-24 overflow-hidden"
+    <section
+      id="skills"
+      className="py-16 sm:py-24 overflow-hidden"
       style={{ background: "#0C0C0C" }}
     >
       <FadeIn y={40}>
@@ -127,17 +128,17 @@ export function SkillsSection() {
             tracking-tight
             text-center
             text-white
-            mb-20
+            mb-12 sm:mb-20
           "
           style={{
-            fontSize: "clamp(3rem, 12vw, 160px)",
+            fontSize: "clamp(2.6rem, 11vw, 160px)",
           }}
         >
           Skills
         </h2>
       </FadeIn>
 
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-4 sm:gap-8">
         <SkillRow skills={row1} />
 
         <SkillRow skills={row2} reverse />

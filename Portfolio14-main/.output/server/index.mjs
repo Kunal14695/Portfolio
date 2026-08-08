@@ -35,40 +35,40 @@ const headers = ((m) => function headersRouteRule(event) {
   }
 });
 const assets = {
-  "/assets/index-BrB45BAX.js": {
+  "/assets/index-CVqiJpRR.js": {
     "type": "text/javascript; charset=utf-8",
-    "etag": '"3058e-5P6capVzpzdxQSugOPzxBvAOcy0"',
-    "mtime": "2026-06-25T09:26:25.698Z",
-    "size": 198030,
-    "path": "../public/assets/index-BrB45BAX.js"
+    "etag": '"30e10-s4PkUIQKw6/9angH1PpAxNZT10A"',
+    "mtime": "2026-08-08T11:58:52.395Z",
+    "size": 200208,
+    "path": "../public/assets/index-CVqiJpRR.js"
   },
-  "/assets/index-7aX2BPrG.js": {
+  "/assets/index-BC1fy2hK.js": {
     "type": "text/javascript; charset=utf-8",
-    "etag": '"554b0-7LIfIwvRv9eIVmI3NKmXn1zRQJk"',
-    "mtime": "2026-06-25T09:26:25.699Z",
-    "size": 349360,
-    "path": "../public/assets/index-7aX2BPrG.js"
+    "etag": '"554a0-Go5KTxAIemxlwjwnf+KZbUrtKaE"',
+    "mtime": "2026-08-08T11:58:52.395Z",
+    "size": 349344,
+    "path": "../public/assets/index-BC1fy2hK.js"
   },
-  "/assets/styles-CtV_3meq.css": {
+  "/assets/styles-B2GHU1gI.css": {
     "type": "text/css; charset=utf-8",
-    "etag": '"152bc-Px+aleuumKYnecuP3nMHG1GSsnI"',
-    "mtime": "2026-06-25T09:26:25.698Z",
-    "size": 86716,
-    "path": "../public/assets/styles-CtV_3meq.css"
-  },
-  "/assets/amine-CiwTsmF2.png": {
-    "type": "image/png",
-    "etag": '"177d99-4qZEyQltUPkM5GkTvdWrZSjC0VA"',
-    "mtime": "2026-06-25T09:26:25.700Z",
-    "size": 1539481,
-    "path": "../public/assets/amine-CiwTsmF2.png"
+    "etag": '"15783-0Gdz6RFn3l48wdkWxOmIy4AJVrQ"',
+    "mtime": "2026-08-08T11:58:52.395Z",
+    "size": 87939,
+    "path": "../public/assets/styles-B2GHU1gI.css"
   },
   "/image.png": {
     "type": "image/png",
     "etag": '"177d99-4qZEyQltUPkM5GkTvdWrZSjC0VA"',
-    "mtime": "2026-06-19T05:22:10.184Z",
+    "mtime": "2026-08-08T11:10:05.545Z",
     "size": 1539481,
     "path": "../public/image.png"
+  },
+  "/assets/amine-CiwTsmF2.png": {
+    "type": "image/png",
+    "etag": '"177d99-4qZEyQltUPkM5GkTvdWrZSjC0VA"',
+    "mtime": "2026-08-08T11:58:52.398Z",
+    "size": 1539481,
+    "path": "../public/assets/amine-CiwTsmF2.png"
   }
 };
 function readAsset(id) {
@@ -96,7 +96,7 @@ const EncodingMap = {
   br: ".br",
   zstd: ".zst"
 };
-const _LJCNvF = defineHandler((event) => {
+const _TCzTXr = defineHandler((event) => {
   if (event.req.method && !METHODS.has(event.req.method)) {
     return;
   }
@@ -168,15 +168,15 @@ const findRouteRules = /* @__PURE__ */ (() => {
     return r;
   };
 })();
-const _lazy_zpkORu = defineLazyEventHandler(() => import("./_chunks/ssr-renderer.mjs"));
+const _lazy_nFP7qZ = defineLazyEventHandler(() => import("./_chunks/ssr-renderer.mjs"));
 const findRoute = /* @__PURE__ */ (() => {
-  const data = { route: "/**", handler: _lazy_zpkORu };
+  const data = { route: "/**", handler: _lazy_nFP7qZ };
   return ((_m, p) => {
     return { data, params: { "_": p.slice(1) } };
   });
 })();
 const globalMiddleware = [
-  toEventHandler(_LJCNvF)
+  toEventHandler(_TCzTXr)
 ].filter(Boolean);
 const errorHandler$1 = (error, event) => {
   const res = defaultHandler(error, event);

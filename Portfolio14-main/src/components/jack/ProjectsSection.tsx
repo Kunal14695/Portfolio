@@ -5,10 +5,10 @@ import { LiveProjectButton } from "./LiveProjectButton";
 
 const projectRoadTrip =
   "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=900&q=80&auto=format&fit=crop";
+const projectPersonalAgent =
+  "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=900&q=80&auto=format&fit=crop";
 const projectTextSummary =
   "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=900&q=80&auto=format&fit=crop";
-const projectFakeNews =
-  "https://images.unsplash.com/photo-1495020689067-958852a7765e?w=900&q=80&auto=format&fit=crop";
 
 interface Project {
   n: string;
@@ -29,16 +29,16 @@ const PROJECTS: Project[] = [
   {
     n: "02",
     category: "Machine Learning",
-    name: "Text Summarization API",
-    image: projectTextSummary,
-    link: "https://github.com/Kunal14695/Text-Summerizer-project",
+    name: "Personal Agent",
+    image: projectPersonalAgent,
+    link: "https://github.com/Kunal14695/Personal-Agent",
   },
   {
     n: "03",
     category: "Machine Learning",
-    name: "Fake News Detection",
-    image: projectFakeNews,
-    link: "https://github.com/Kunal14695/Fake-News-Detection",
+    name: "Text Summarization API",
+    image: projectTextSummary,
+    link: "https://github.com/Kunal14695/Text-Summerizer-project",
   },
 ];
 
@@ -69,7 +69,7 @@ function ProjectCard({
       <motion.div
         style={{ scale }}
         className="
-          rounded-[40px] sm:rounded-[50px] md:rounded-[60px]
+          rounded-[24px] sm:rounded-[40px] md:rounded-[60px]
           border border-white/10
           bg-[#0C0C0C]/95
           backdrop-blur-xl
@@ -80,27 +80,27 @@ function ProjectCard({
         "
       >
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6 md:mb-8 px-2 sm:px-4">
-          <div className="flex items-center gap-4 sm:gap-6 md:gap-8 flex-wrap">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6 mb-4 sm:mb-6 md:mb-8 px-1 sm:px-4">
+          <div className="flex items-center gap-3 sm:gap-6 md:gap-8 flex-wrap">
             <div
               className="hero-heading font-black text-white/15"
               style={{
-                fontSize: "clamp(3rem, 10vw, 140px)",
+                fontSize: "clamp(2.2rem, 7vw, 140px)",
                 lineHeight: 1,
               }}
             >
               {project.n}
             </div>
 
-            <div className="flex flex-col gap-1">
-              <span className="text-white/50 uppercase tracking-[0.25em] text-xs sm:text-sm">
+            <div className="flex flex-col gap-0.5 sm:gap-1">
+              <span className="text-white/50 uppercase tracking-[0.2em] text-[10px] sm:text-xs md:text-sm">
                 {project.category}
               </span>
 
               <span
                 className="text-white font-medium uppercase"
                 style={{
-                  fontSize: "clamp(1rem, 2vw, 1.75rem)",
+                  fontSize: "clamp(0.95rem, 2.5vw, 1.75rem)",
                 }}
               >
                 {project.name}
@@ -108,11 +108,13 @@ function ProjectCard({
             </div>
           </div>
 
-          <LiveProjectButton href={project.link} />
+          <div className="self-start sm:self-auto">
+            <LiveProjectButton href={project.link} />
+          </div>
         </div>
 
         {/* Images */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-3 sm:gap-4">
           {/* Left */}
           <div className="hidden md:flex md:col-span-2 flex-col gap-4">
             <img
@@ -121,7 +123,7 @@ function ProjectCard({
               loading="lazy"
               className="
                 w-full object-cover
-                rounded-[30px]
+                rounded-[24px]
                 border border-white/10
                 hover:scale-[1.02]
                 transition-all duration-300
@@ -137,7 +139,7 @@ function ProjectCard({
               loading="lazy"
               className="
                 w-full object-cover
-                rounded-[30px]
+                rounded-[24px]
                 border border-white/10
                 hover:scale-[1.02]
                 transition-all duration-300
@@ -149,14 +151,14 @@ function ProjectCard({
           </div>
 
           {/* Main Image */}
-          <div className="md:col-span-3 h-48 sm:h-64 md:h-auto">
+          <div className="md:col-span-3 h-44 xs:h-52 sm:h-64 md:h-auto">
             <img
               src={project.image}
               alt={project.name}
               loading="lazy"
               className="
                 w-full h-full object-cover
-                rounded-[25px] sm:rounded-[35px] md:rounded-[45px]
+                rounded-[18px] sm:rounded-[30px] md:rounded-[45px]
                 border border-white/10
                 hover:scale-[1.01]
                 transition-all duration-300
@@ -178,17 +180,18 @@ export function ProjectsSection() {
   });
 
   return (
-    <section id="projects"
+    <section
+      id="projects"
       ref={containerRef}
       className="
-        px-5 sm:px-8 md:px-10
-        py-20 sm:py-24 md:py-32
+        px-3.5 sm:px-8 md:px-10
+        py-16 sm:py-24 md:py-32
         bg-[#0C0C0C]
       "
     >
       <FadeIn
         y={40}
-        className="text-center mb-16 sm:mb-20 md:mb-28"
+        className="text-center mb-12 sm:mb-20 md:mb-28"
       >
         <h2
           className="
@@ -200,7 +203,7 @@ export function ProjectsSection() {
             text-white
           "
           style={{
-            fontSize: "clamp(3rem, 12vw, 160px)",
+            fontSize: "clamp(2.6rem, 11vw, 160px)",
           }}
         >
           Projects
@@ -211,7 +214,7 @@ export function ProjectsSection() {
         {PROJECTS.map((project, index) => (
           <div
             key={project.n}
-            className="h-[60vh] sm:h-[85vh]"
+            className="min-h-[460px] sm:h-[85vh] mb-6 sm:mb-0"
           >
             <ProjectCard
               project={project}

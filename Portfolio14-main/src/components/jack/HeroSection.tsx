@@ -20,7 +20,7 @@ export function HeroSection() {
 
   return (
     <section
-      className="h-screen flex flex-col relative"
+      className="min-h-[100dvh] sm:h-screen flex flex-col relative"
       style={{ overflowX: "clip" }}
     >
       {/* Navbar */}
@@ -28,27 +28,10 @@ export function HeroSection() {
         as="nav"
         delay={0}
         y={-20}
-        className="flex items-center justify-between px-6 md:px-10 pt-6 md:pt-8 relative z-20 w-full"
+        className="flex items-center justify-between md:justify-start px-4 sm:px-6 md:px-10 pt-5 sm:pt-6 md:pt-8 relative z-20 w-full"
       >
-        {/* Monogram/Logo */}
-        <a
-          href="#"
-          className="
-            text-[#D7E2EA]
-            font-bold
-            tracking-wider
-            text-lg
-            md:text-xl
-            uppercase
-            hover:opacity-80
-            transition-opacity
-          "
-        >
-          KST
-        </a>
-
         {/* Desktop Links (md and up) */}
-        <div className="hidden md:flex items-center gap-6 lg:gap-10">
+        <div className="hidden md:flex items-center gap-6 md:gap-8 lg:gap-12">
           {NAV_LINKS.map((link) => (
             <a
               key={link}
@@ -73,7 +56,7 @@ export function HeroSection() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(true)}
-          className="md:hidden text-[#D7E2EA] hover:opacity-70 transition-opacity p-2 focus:outline-none cursor-pointer"
+          className="md:hidden ml-auto text-[#D7E2EA] hover:opacity-70 transition-opacity p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center focus:outline-none cursor-pointer"
           aria-label="Open Menu"
         >
           <Menu className="h-6 w-6" />
@@ -90,7 +73,7 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setMenuOpen(false)}
-              className="fixed inset-0 bg-black/70 backdrop-blur-md z-40 md:hidden"
+              className="fixed inset-0 bg-black/75 backdrop-blur-md z-40 md:hidden"
             />
 
             {/* Menu Content */}
@@ -99,44 +82,57 @@ export function HeroSection() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed right-0 top-0 bottom-0 w-3/4 max-w-[280px] bg-[#0C0C0C]/95 border-l border-white/10 backdrop-blur-xl p-8 z-50 md:hidden flex flex-col"
+              className="fixed right-0 top-0 bottom-0 w-4/5 max-w-[300px] bg-[#0C0C0C]/98 border-l border-white/10 backdrop-blur-xl p-6 sm:p-8 z-50 md:hidden flex flex-col justify-between"
             >
-              {/* Close Button */}
-              <div className="flex justify-end mb-8">
-                <button
-                  onClick={() => setMenuOpen(false)}
-                  className="text-[#D7E2EA] hover:opacity-70 transition-opacity p-2 focus:outline-none cursor-pointer"
-                  aria-label="Close Menu"
-                >
-                  <X className="h-6 w-6" />
-                </button>
+              <div>
+                {/* Close Button */}
+                <div className="flex justify-end mb-6">
+                  <button
+                    onClick={() => setMenuOpen(false)}
+                    className="text-[#D7E2EA] hover:opacity-70 transition-opacity p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center focus:outline-none cursor-pointer"
+                    aria-label="Close Menu"
+                  >
+                    <X className="h-6 w-6" />
+                  </button>
+                </div>
+
+                {/* Links */}
+                <div className="flex flex-col gap-5 mt-4">
+                  {NAV_LINKS.map((link, i) => (
+                    <motion.a
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.04 }}
+                      key={link}
+                      href={`#${link.toLowerCase()}`}
+                      onClick={() => setMenuOpen(false)}
+                      className="
+                        text-[#D7E2EA]
+                        font-semibold
+                        uppercase
+                        tracking-widest
+                        text-base sm:text-lg
+                        hover:text-white
+                        transition-colors duration-200
+                        py-2
+                        border-b border-white/5
+                      "
+                    >
+                      {link}
+                    </motion.a>
+                  ))}
+                </div>
               </div>
 
-              {/* Links */}
-              <div className="flex flex-col gap-6 mt-8">
-                {NAV_LINKS.map((link, i) => (
-                  <motion.a
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
-                    key={link}
-                    href={`#${link.toLowerCase()}`}
-                    onClick={() => setMenuOpen(false)}
-                    className="
-                      text-[#D7E2EA]
-                      font-semibold
-                      uppercase
-                      tracking-widest
-                      text-lg
-                      hover:text-white
-                      transition-colors duration-200
-                      pb-2
-                      border-b border-white/5
-                    "
-                  >
-                    {link}
-                  </motion.a>
-                ))}
+              {/* Bottom Drawer Quick CTA */}
+              <div className="pt-6 border-t border-white/10 flex justify-center">
+                <a
+                  href="#contact"
+                  onClick={() => setMenuOpen(false)}
+                  className="w-full text-center py-3 rounded-full bg-white/10 text-white font-medium uppercase tracking-wider text-xs border border-white/15"
+                >
+                  Get in touch
+                </a>
               </div>
             </motion.div>
           </>
@@ -144,7 +140,7 @@ export function HeroSection() {
       </AnimatePresence>
 
       {/* Title */}
-      <div className="overflow-hidden mt-6 sm:mt-4 md:-mt-5 px-2">
+      <div className="overflow-hidden mt-4 sm:mt-4 md:-mt-5 px-3 sm:px-4">
         <FadeIn delay={0.15} y={40}>
           <h1
             className="
@@ -152,10 +148,11 @@ export function HeroSection() {
               font-black
               uppercase
               tracking-tight
-              leading-[0.95]
+              leading-[0.92]
               w-full
-              text-[15vw]
-              sm:text-[13.5vw]
+              text-[13.5vw]
+              xs:text-[13vw]
+              sm:text-[13vw]
               md:text-[14.5vw]
               lg:text-[15.5vw]
               break-words
@@ -176,11 +173,12 @@ export function HeroSection() {
           flex-col sm:flex-row
           justify-between
           items-start sm:items-end
-          gap-6 sm:gap-0
-          pb-7
+          gap-5 sm:gap-0
+          pb-6
           sm:pb-8
           md:pb-10
-          px-6
+          px-4
+          sm:px-6
           md:px-10
           relative
           z-20
@@ -194,12 +192,13 @@ export function HeroSection() {
               uppercase
               tracking-wide
               leading-snug
-              max-w-[160px]
+              max-w-[170px]
+              xs:max-w-[200px]
               sm:max-w-[220px]
               md:max-w-[260px]
             "
             style={{
-              fontSize: "clamp(0.75rem, 1.4vw, 1.5rem)",
+              fontSize: "clamp(0.7rem, 1.4vw, 1.5rem)",
             }}
           >
             machine learning developer & full-stack engineer
@@ -221,15 +220,14 @@ export function HeroSection() {
           left-1/2
           -translate-x-1/2
           z-10
-          top-1/2
-          -translate-y-1/2
-          sm:top-auto
-          sm:translate-y-0
+          bottom-4
           sm:bottom-0
-          w-[220px]
+          w-[190px]
+          xs:w-[230px]
           sm:w-[360px]
           md:w-[440px]
           lg:w-[520px]
+          pointer-events-none
         "
       >
         <Magnet

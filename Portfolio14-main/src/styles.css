@@ -169,10 +169,27 @@ html {
   --card-gap: 28px;
 }
 
-@media (max-w: 768px) {
+@media (max-width: 768px) {
   :root {
-    --card-top-offset: 70px;
-    --card-gap: 16px;
+    --card-top-offset: 68px;
+    --card-gap: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --card-top-offset: 56px;
+    --card-gap: 10px;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 

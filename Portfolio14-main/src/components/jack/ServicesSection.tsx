@@ -30,15 +30,15 @@ const SERVICES = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="px-4 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 bg-[#0C0C0C]">
+    <section id="services" className="px-3 sm:px-8 md:px-10 py-16 sm:py-24 md:py-32 bg-[#0C0C0C]">
       <div
         className="
           max-w-7xl mx-auto
-          rounded-[40px] sm:rounded-[50px] md:rounded-[60px]
+          rounded-[24px] sm:rounded-[45px] md:rounded-[60px]
           border border-white/10
           bg-[#0C0C0C]
-          px-4 sm:px-8 md:px-12
-          py-8 sm:py-16 md:py-20
+          px-3.5 sm:px-8 md:px-12
+          py-7 sm:py-16 md:py-20
           shadow-[0_0_60px_rgba(255,255,255,0.03)]
         "
       >
@@ -52,11 +52,11 @@ export function ServicesSection() {
               leading-none
               tracking-tight
               text-center
-              mb-16 sm:mb-20 md:mb-28
+              mb-12 sm:mb-20 md:mb-28
               text-white
             "
             style={{
-              fontSize: "clamp(3rem, 12vw, 160px)",
+              fontSize: "clamp(2.6rem, 11vw, 160px)",
             }}
           >
             Services
@@ -72,10 +72,10 @@ export function ServicesSection() {
                   group
                   flex flex-col md:flex-row
                   md:items-center
-                  gap-6 sm:gap-10 md:gap-14
-                  py-8 sm:py-10 md:py-12
-                  px-4 md:px-6
-                  rounded-3xl
+                  gap-4 sm:gap-8 md:gap-14
+                  py-6 sm:py-10 md:py-12
+                  px-3 sm:px-4 md:px-6
+                  rounded-2xl sm:rounded-3xl
                   border border-transparent
                   transition-all duration-300
                   hover:bg-white/5
@@ -102,7 +102,7 @@ export function ServicesSection() {
                   style={{
                     color: "#FFFFFF",
                     opacity: 0.15,
-                    fontSize: "clamp(3rem, 10vw, 140px)",
+                    fontSize: "clamp(2.2rem, 8vw, 140px)",
                     lineHeight: 1,
                   }}
                 >
@@ -110,8 +110,8 @@ export function ServicesSection() {
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col gap-3 sm:gap-4">
-                  <div
+                <div className="flex flex-col gap-2.5 sm:gap-3 flex-1">
+                  <span
                     className="
                       font-medium
                       uppercase
@@ -120,19 +120,19 @@ export function ServicesSection() {
                     "
                     style={{
                       color: "#FFFFFF",
-                      fontSize: "clamp(1rem, 2.2vw, 2.1rem)",
-                      lineHeight: 1.1,
+                      fontSize: "clamp(1.1rem, 4.2vw, 2.1rem)",
+                      lineHeight: 1.15,
                     }}
                   >
                     {s.name}
-                  </div>
+                  </span>
 
                   <p
                     className="font-light leading-relaxed max-w-2xl"
                     style={{
                       color: "#FFFFFF",
                       opacity: 0.65,
-                      fontSize: "clamp(0.85rem, 1.6vw, 1.25rem)",
+                      fontSize: "clamp(0.8rem, 1.5vw, 1.15rem)",
                     }}
                   >
                     {s.desc}

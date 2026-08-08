@@ -30,14 +30,14 @@ const ROW2 = IMAGES.slice(11);
 function Row({ images, direction }: { images: string[]; direction: "left" | "right" }) {
   const tripled = [...images, ...images, ...images];
   return (
-    <div className="flex gap-3" style={{ willChange: "transform" }}>
+    <div className="flex gap-2.5 sm:gap-3" style={{ willChange: "transform" }}>
       {tripled.map((src, i) => (
         <img
           key={i}
           src={src}
           alt=""
           loading="lazy"
-          className="rounded-2xl object-cover shrink-0 w-[260px] h-[160px] sm:w-[420px] sm:h-[270px]"
+          className="rounded-xl sm:rounded-2xl object-cover shrink-0 w-[210px] h-[130px] sm:w-[380px] sm:h-[240px] md:w-[420px] md:h-[270px]"
         />
       ))}
     </div>
@@ -67,7 +67,7 @@ export function MarqueeSection() {
   return (
     <section
       ref={sectionRef}
-      className="pt-24 sm:pt-32 md:pt-40 pb-10 flex flex-col gap-3"
+      className="pt-16 sm:pt-28 md:pt-40 pb-8 sm:pb-10 flex flex-col gap-2.5 sm:gap-3"
       style={{ background: "#0C0C0C", overflowX: "clip" }}
     >
       <div style={{ transform: `translateX(${x1}px)`, willChange: "transform" }}>
