@@ -6,7 +6,7 @@ A modern, high-performance portfolio website built with **React**, **TanStack Ro
 
 ## 🌐 Live Preview
 
-- **Live URL**: https://portfolio-nh96.onrender.com/
+- **Local URL**: [http://localhost:3000](http://localhost:3000)
 - **Production Server**: Node.js / Nitro SSR
 - **Live Deployment Options**: GitHub Pages, Vercel, Netlify, Render
 
@@ -63,77 +63,21 @@ A modern, high-performance portfolio website built with **React**, **TanStack Ro
 
 ---
 
-## 📂 Project Structure
+## 💻 Available Scripts
 
-```text
-d:/potfolio/
-├── Portfolio14-main/
-│   ├── src/
-│   │   ├── assets/            # Static assets and portraits
-│   │   ├── components/
-│   │   │   └── jack/          # Core portfolio sections
-│   │   │       ├── HeroSection.tsx
-│   │   │       ├── AboutSection.tsx
-│   │   │       ├── SkillsSection.tsx
-│   │   │       ├── ExperienceSection.tsx
-│   │   │       ├── ServicesSection.tsx
-│   │   │       ├── ProjectsSection.tsx
-│   │   │       ├── MarqueeSection.tsx
-│   │   │       ├── FooterSection.tsx
-│   │   │       ├── Magnet.tsx
-│   │   │       ├── FadeIn.tsx
-│   │   │       └── ContactButton.tsx
-│   │   ├── routes/            # TanStack file-based routes
-│   │   ├── styles.css         # Tailwind tokens & responsive styling
-│   │   └── router.tsx         # Router configuration
-│   ├── public/                # Public icons and manifest
-│   ├── package.json           # Dependencies and scripts
-│   ├── tsconfig.json          # TypeScript configuration
-│   └── vite.config.ts         # Vite & Nitro SSR configuration
-└── README.md
-```
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-- **Node.js** (v18 or higher recommended)
-- **npm** or **bun**
-
-### Installation
-
-1. Navigate to the project directory:
-   ```bash
-   cd Portfolio14-main
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
----
-
-### 💻 Available Scripts
-
-#### 1. Development Mode (Hot-Reloading)
 ```bash
+# 1. Install dependencies
+npm install
+
+# 2. Start development server
 npm run dev
-```
-Starts the Vite dev server at `http://localhost:5173` (or next available port).
 
-#### 2. Production Build
-```bash
+# 3. Build for production
 npm run build
-```
-Compiles and bundles both client assets and the Nitro SSR server into `.output/`.
 
-#### 3. Run Production Server
-```bash
+# 4. Start production SSR server
 npm start
 ```
-Starts the fast, optimized SSR server at `http://localhost:3000`.
 
 ---
 
@@ -143,8 +87,3 @@ Starts the fast, optimized SSR server at `http://localhost:3000`.
 - **GitHub**: [@Kunal14695](https://github.com/Kunal14695)
 - **LinkedIn**: [Kunal Singh Tanwar](https://www.linkedin.com/in/kunal-singh-tanwar-321031291)
 - **Instagram**: [@kunal_singh_tanwar_14](https://instagram.com/kunal_singh_tanwar_14)
-
----
-
-## 📄 License
-This project is open source and available under the [MIT License](LICENSE).
