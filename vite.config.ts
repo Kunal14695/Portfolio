@@ -17,6 +17,11 @@ export default defineConfig({
     plugins: [
       nitro({
         preset: "vercel",
+        vercel: {
+          config: {
+            runtime: "nodejs20.x",
+          },
+        },
       }),
     ],
   },
