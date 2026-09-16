@@ -83,7 +83,7 @@ npm start
 
 ## 📬 Contact & Connect
 
-- **Email**: [kunalsingtanwar355@gmail.com](mailto:kunalsingtanwar355@gmail.com)
+- **Email**: [kunalsinghtanwar355@gmail.com](mailto:kunalsinghtanwar355@gmail.com)
 - **GitHub**: [@Kunal14695](https://github.com/Kunal14695)
 - **LinkedIn**: [Kunal Singh Tanwar](https://www.linkedin.com/in/kunal-singh-tanwar-321031291)
 - **Instagram**: [@kunal_singh_tanwar_14](https://instagram.com/kunal_singh_tanwar_14)
